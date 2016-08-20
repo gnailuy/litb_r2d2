@@ -10,6 +10,7 @@ import scrapy
 
 class LitbR2D2Item(scrapy.Item):
     # define the fields for your item here like:
+    date = scrapy.Field()
     product_id = scrapy.Field()
     has_color = scrapy.Field()
 
