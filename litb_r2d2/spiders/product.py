@@ -19,7 +19,7 @@ class ProductSpider(scrapy.Spider):
         if 'urls' not in kwargs:
             raise CloseSpider('Error: urls not provided as parameters!')
         for url in kwargs.get('urls').split(','):
-            self.start_urls.append(url)
+            self.start_urls.append(url.strip())
         if 'proxies' in kwargs:
             for proxy in kwargs.get('proxies').split(','):
                 self.http_proxies.append(proxy)
