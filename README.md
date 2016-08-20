@@ -14,7 +14,7 @@ and then send a scrapy job to `scrapyd` via `curl`:
 
 or via a `python` script:
 
-    python litb_r2d2/send_request_example.py
+    python examples/send_request_to_scrapyd.py examples/product_ids.csv
 
 or via command line without `scrapyd` (be aware that you might not have the write permission of the default output path '/items'):
 
