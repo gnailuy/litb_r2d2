@@ -29,10 +29,10 @@ class ProductSpider(scrapy.Spider):
 
         item['product_id'] = [re.sub(r'\.html', '', response.url.split('_')[-1])]
 
-        color = response.xpath(
-            '//form[@class="widget prod-info-order ctr-info"]/ul/li[1]/select[@name="id[545]"]/option/text()'
+        selects = response.xpath(
+            '//form[@class="widget prod-info-order ctr-info"]/ul/li/select/option/text()'
         ).extract()
-        if len(color) > 0:
+        if len(selects) > 0 and 'color' in [x.lower() for x in selects]:
             item['has_color'] = [True]
         else:
             item['has_color'] = [False]
